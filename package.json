@@ -1,0 +1,25 @@
+{
+  "name": "zoo-keepr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiSantoz/zoo-keepr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DiSantoz/zoo-keepr/issues"
+  },
+  "homepage": "https://github.com/DiSantoz/zoo-keepr#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
