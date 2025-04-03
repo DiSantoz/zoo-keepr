@@ -1,5 +1,5 @@
 const express = require("express");
-const { animals } = require("./data/animals.json");
+const { animals } = require("../data/animals.json");
 const app = express();
 const PORT = process.env.PORT || 3001;
 // filter query
