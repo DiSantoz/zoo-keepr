@@ -4,9 +4,9 @@ const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(express.static("public"));
 const fs = require("fs");
 const path = require("path");
-const { type } = require("os");
 
 // PORT
 const PORT = 3001;
@@ -63,7 +63,7 @@ function createNewAnimal(body, animalsArray) {
     JSON.stringify({ animals: animalsArray }, null, 2)
   );
 
-  return body;
+  return animal;
 }
 
 // validate JSON data
@@ -80,7 +80,7 @@ function validateAnimal(animal) {
   if (!animal.personalityTraits || !Array.isArray(animal.personalityTraits)) {
     return false;
   }
-  return false;
+  return true;
 }
 
 // *********************************** ROUTES ***********************************************
@@ -114,7 +114,11 @@ app.post("/api/animals", (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+
 // listen for port
 app.listen(PORT, () => {
-  console.log(`server is running at http://localhost:3001/api/animals`);
+  console.log(`server is running at http://localhost:3001`);
 });
