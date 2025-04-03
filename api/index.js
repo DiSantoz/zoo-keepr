@@ -114,7 +114,23 @@ app.post("/api/animals", (req, res) => {
   }
 });
 
+// homepage
 app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+
+// animals page
+app.get("/animals", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/animals.html"));
+});
+
+// zookeeper page
+app.get("/zookeepers", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/zookeepers.html"));
+});
+
+// wildcard route
+app.get("*wildcard", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
